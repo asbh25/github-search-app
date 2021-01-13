@@ -7,13 +7,13 @@
   width: 400px;
   height: fit-content;
 
-  h3 {
+  &__heading {
     margin-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
   }
 
-  p {
+  &__lang, &__desc {
     margin-bottom: 10px;
     font-size: 12px;
 
