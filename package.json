@@ -1,6 +1,6 @@
 {
   "name": "github-search-app",
-  "homepage": "http://asbh25.github.io/github-search-app",
+  "homepage": "/github-search-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
