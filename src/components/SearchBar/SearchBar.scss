@@ -1,0 +1,40 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+
+  input[type="text"] {
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    background: #ffffff !important;
+    outline: none;
+    height: 24px; 
+    width: 200px; 
+    padding-left: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+      width: auto;
+      height: 36px;
+      margin-right: 0;
+    }
+ }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
