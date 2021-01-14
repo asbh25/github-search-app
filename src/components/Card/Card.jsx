@@ -30,7 +30,12 @@ export const Card = ({ result })=> {
 Card.propTypes = {
   result: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    language: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    language: PropTypes.string,
   }).isRequired
 };
+
+Card.defaultProps = {
+  description: null,
+  language: null,
+}

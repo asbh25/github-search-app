@@ -22,22 +22,20 @@ export const SearchBar = () => {
   }, [history]);
 
   const searchRepos = value => {
-    if (!history.length) {
-      setHistory(query);
+    if (!history) {
+      setHistory(value);
     } else {
-      setHistory([...history, query]);
+      setHistory([...history, value]);
     }
 
     getRepositories(value).then(({ data }) => {
-      setResults(data.items)
+      setResults(data.items);
     });
   }
 
-  const handleChange = ({ target }) => {
+  const handleChange = async ({ target }) => {
     const search = _.debounce(searchRepos, 1000);
-
-    setQuery(target.value);
-
+    
     setSearchQuery(prevSearch => {
       if (prevSearch.cancel) {
         prevSearch.cancel();
@@ -45,7 +43,13 @@ export const SearchBar = () => {
       return search;
     });
 
-    search(target.value);
+    if (target.value) {
+      setQuery(target.value);
+      search(target.value);
+    } else {
+      setQuery('');
+      setResults([]);
+    }
   }
 
 
@@ -53,6 +57,7 @@ export const SearchBar = () => {
     <section className="content">
       <div className="content__section">
         <input
+          id="input"
           type="text"
           placeholder="tom"
           value={query.trimLeft()}
